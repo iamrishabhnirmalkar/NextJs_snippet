@@ -4,6 +4,7 @@
 - [Git & Github](#git-and-github)
 - [Folder Structure](#folder-structure)
 - [Tailwind CSS](#tailwind-css)
+- [Husky](#husky)
 
 ## Next Js Project
 
@@ -223,3 +224,23 @@ plugins: [
 his is basic you need to know. For more, go through the documentation. You can also create constants for height, width, color, padding, and margin values to maintain consistency across your project.
 
 This example demonstrates how to set up Tailwind CSS for your project, including content paths, theme customizations, and plugins. For more details, refer to the Tailwind CSS Documentation.[https://tailwindcss.com/docs]
+
+## Husky
+
+### About Husky
+
+Husky is a popular tool used in Git repositories to manage and enforce Git hooks. Git hooks are scripts that Git executes before or after events such as committing, pushing, and receiving changes.
+
+Install Husky and lint-staged:
+
+```bash
+npm i husky lint-staged -D
+```
+
+Initialize Husky:
+
+```bash
+npx husky init
+```
+
+After this, the .husky folder will be created. Create a pre-commit hook:
