@@ -6,6 +6,8 @@
 - [Tailwind CSS](#tailwind-css)
 - [Husky](#husky)
 - [Commit Lint](#commit-lint)
+- [ES Lint](#es-lint)
+- [Prettier](#prettier)
 
 ## Next Js Project
 
@@ -328,3 +330,98 @@ git commit -m "fix: This is a bug fix"
 9. ci: Changes to CI configuration files and scripts.
 10. chore: Other changes that don't modify src or test files.
 11. revert: Reverts a previous commit.
+
+## Es Lint
+
+### About
+
+ESLint statically analyzes your code to quickly find problems. It is built into most text editors, and you can run ESLint as part of your continuous integration pipeline. Use this link TypeScript ESLint.(https://typescript-eslint.io/)
+
+In Next.js 14, ESLint is already pre-configured. You can further customize it by defining additional rules in the `.eslintrc.json` file.
+
+```json
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "next/core-web-vitals"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+    "React": "writable"
+  },
+  "plugins": ["react"],
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "no-unused-vars": "warn",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint"],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": "error",
+        "no-console": "error",
+        "no-duplicate-imports": "error",
+        "@typescript-eslint/no-explicit-any": "warn"
+      }
+    }
+  ]
+}
+```
+
+Install the following extensions in VS Code:
+
+- [ESLint by Microsoft](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Error Lens by Alexander](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+
+Add the following scripts to your package.json:
+
+```json
+"scripts": {
+  "lint:fix": "eslint --fix"
+}
+```
+
+Add the following configuration for lint-staged in your package.json:
+
+```json
+ "lint-staged": {
+  "*.ts": [
+    "npm run lint:fix"
+  ]
+}
+```
+
+In your Husky folder, create a `pre-commit` file with the following content:
+
+```sh
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx lint-staged
+
+
+```
+
+To run ESLint and fix issues based on the rules in your eslint.config.mjs file, use the following commands:
+
+```bash
+npm run lint
+npm run lint:fix
+```
+
+## Prettier
