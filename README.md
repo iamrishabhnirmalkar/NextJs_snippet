@@ -1,13 +1,13 @@
 # Next Js Frontend - Template Setup
 
-- [next Js Project](#next-js-project)
-- [Git & Github](#git-and-github)
-- [Folder Structure](#folder-structure)
-- [Tailwind CSS](#tailwind-css)
-- [Husky](#husky)
-- [Commit Lint](#commit-lint)
-- [ES Lint](#es-lint)
-- [Prettier](#prettier)
+-   [next Js Project](#next-js-project)
+-   [Git & Github](#git-and-github)
+-   [Folder Structure](#folder-structure)
+-   [Tailwind CSS](#tailwind-css)
+-   [Husky](#husky)
+-   [Commit Lint](#commit-lint)
+-   [ES Lint](#es-lint)
+-   [Prettier](#prettier)
 
 ## Next Js Project
 
@@ -27,12 +27,12 @@ When prompted, you can configure the project with the following options:
 
 Would you like to use TypeScript? ... No / Yes
 
-- Would you like to use ESLint? ... No / Yes
-- Would you like to use Tailwind CSS? ... No / Yes
-- Would you like to use `src/` directory? ... No / Yes
-- Would you like to use App Router? (recommended) ... No / Yes
-- Would you like to customize the default import alias (@/\_)? ... No / Yes
-- What import alias would you like configured? ... @/\_
+-   Would you like to use ESLint? ... No / Yes
+-   Would you like to use Tailwind CSS? ... No / Yes
+-   Would you like to use `src/` directory? ... No / Yes
+-   Would you like to use App Router? (recommended) ... No / Yes
+-   Would you like to customize the default import alias (@/\_)? ... No / Yes
+-   What import alias would you like configured? ... @/\_
 
 ## Git and Github
 
@@ -66,80 +66,80 @@ git push -u origin master
 
 1. docker:
 
-- Purpose: Contains Docker-related configuration files.
-- Usage: Used to define the Docker environment for the application, including Docker files and Docker Compose files.
+-   Purpose: Contains Docker-related configuration files.
+-   Usage: Used to define the Docker environment for the application, including Docker files and Docker Compose files.
 
 2. public:
 
-- Purpose: Stores static assets such as images, fonts, and other files that need to be directly accessible via URL.
-- Usage: Used for serving static files that don’t change frequently and need to be cached by the browser.
+-   Purpose: Stores static assets such as images, fonts, and other files that need to be directly accessible via URL.
+-   Usage: Used for serving static files that don’t change frequently and need to be cached by the browser.
 
 #### src Directory Structure
 
 1. @types:
 
-- Purpose: Contains TypeScript type definitions.
-- Usage: Used to define custom types and interfaces, improving type safety and code completion within the project.
+-   Purpose: Contains TypeScript type definitions.
+-   Usage: Used to define custom types and interfaces, improving type safety and code completion within the project.
 
 2. app:
 
-- Purpose: Contains the application’s main routing and layout logic.
-- Usage: Utilized for defining routes, layouts, and nested routes in Next.js 14. Each file or folder represents a route.
+-   Purpose: Contains the application’s main routing and layout logic.
+-   Usage: Utilized for defining routes, layouts, and nested routes in Next.js 14. Each file or folder represents a route.
 
 3. assets:
 
-- Purpose: Stores images, icons, and other static assets.
-- Usage: These assets are imported and used within components and pages.
+-   Purpose: Stores images, icons, and other static assets.
+-   Usage: These assets are imported and used within components and pages.
 
 4. components:
 
-- Purpose: Contains reusable React components.
-- Usage: Used to define UI components that can be used throughout the application, promoting reusability and modularity.
+-   Purpose: Contains reusable React components.
+-   Usage: Used to define UI components that can be used throughout the application, promoting reusability and modularity.
 
 5. configs:
 
-- Purpose: Holds configuration files and settings.
-- Usage: Used for managing application configuration such as environment settings, API configurations, and third-party service configurations.
+-   Purpose: Holds configuration files and settings.
+-   Usage: Used for managing application configuration such as environment settings, API configurations, and third-party service configurations.
 
 6. constants:
 
-- Purpose: Stores constant values and enumerations.
-- Usage: Used to define constant values that are used across the application, ensuring consistency and ease of maintenance.
+-   Purpose: Stores constant values and enumerations.
+-   Usage: Used to define constant values that are used across the application, ensuring consistency and ease of maintenance.
 
 7. locales:
 
-- Purpose: Contains localization files.
-- Usage: Used for managing translations and internationalization, allowing the application to support multiple languages.
+-   Purpose: Contains localization files.
+-   Usage: Used for managing translations and internationalization, allowing the application to support multiple languages.
 
 8. mock:
 
-- Purpose: Stores mock data and APIs.
-- Usage: Used for testing and development purposes, providing fake data and endpoints to simulate real APIs.
+-   Purpose: Stores mock data and APIs.
+-   Usage: Used for testing and development purposes, providing fake data and endpoints to simulate real APIs.
 
 9. services:
 
-- Purpose: Contains service functions and API calls.
-- Usage: Used for handling business logic and API interactions, abstracting data fetching and manipulation.
+-   Purpose: Contains service functions and API calls.
+-   Usage: Used for handling business logic and API interactions, abstracting data fetching and manipulation.
 
 10. store:
 
-- Purpose: Manages state management logic.
-- Usage: Used for setting up state management libraries like Redux, managing global state and actions.
+-   Purpose: Manages state management logic.
+-   Usage: Used for setting up state management libraries like Redux, managing global state and actions.
 
 11. styles:
 
-- Purpose: Stores global styles, CSS, SCSS, or any other styling-related files.
-- Usage: Helps in maintaining a consistent look and feel across the application.
+-   Purpose: Stores global styles, CSS, SCSS, or any other styling-related files.
+-   Usage: Helps in maintaining a consistent look and feel across the application.
 
 12. utils:
 
-- Purpose: Contains utility functions and helpers.
-- sad
+-   Purpose: Contains utility functions and helpers.
+-   sad
 
 13. views:
 
-- Purpose: Stores page components and views.
-- Usage: Used for defining the main pages and views of the application, typically corresponding to routes defined in the app directory.
+-   Purpose: Stores page components and views.
+-   Usage: Used for defining the main pages and views of the application, typically corresponding to routes defined in the app directory.
 
 ## Tailwind Css
 
@@ -307,13 +307,13 @@ module.exports = {
 
 By using this configuration, you should always commit in a proper way. Here are some examples:
 
-- Feature:
+-   Feature:
 
 ```bash
 git commit -m "feat: This is a new feature"
 ```
 
-- Bug Fix:
+-   Bug Fix:
 
 ```bash
 git commit -m "fix: This is a bug fix"
@@ -341,52 +341,48 @@ In Next.js 14, ESLint is already pre-configured. You can further customize it by
 
 ```json
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "next/core-web-vitals"
-  ],
-  "env": {
-    "browser": true,
-    "node": true,
-    "es6": true
-  },
-  "globals": {
-    "React": "writable"
-  },
-  "plugins": ["react"],
-  "parserOptions": {
-    "ecmaVersion": 2021,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
-  "rules": {
-    "no-unused-vars": "warn",
-    "react/prop-types": "off",
-    "react/react-in-jsx-scope": "off"
-  },
-  "overrides": [
-    {
-      "files": ["**/*.ts", "**/*.tsx"],
-      "parser": "@typescript-eslint/parser",
-      "plugins": ["@typescript-eslint"],
-      "rules": {
-        "@typescript-eslint/no-unused-vars": "error",
-        "no-console": "error",
-        "no-duplicate-imports": "error",
-        "@typescript-eslint/no-explicit-any": "warn"
-      }
-    }
-  ]
+    "extends": ["eslint:recommended", "plugin:react/recommended", "next/core-web-vitals"],
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    },
+    "globals": {
+        "React": "writable"
+    },
+    "plugins": ["react"],
+    "parserOptions": {
+        "ecmaVersion": 2021,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "no-unused-vars": "warn",
+        "react/prop-types": "off",
+        "react/react-in-jsx-scope": "off"
+    },
+    "overrides": [
+        {
+            "files": ["**/*.ts", "**/*.tsx"],
+            "parser": "@typescript-eslint/parser",
+            "plugins": ["@typescript-eslint"],
+            "rules": {
+                "@typescript-eslint/no-unused-vars": "error",
+                "no-console": "error",
+                "no-duplicate-imports": "error",
+                "@typescript-eslint/no-explicit-any": "warn"
+            }
+        }
+    ]
 }
 ```
 
 Install the following extensions in VS Code:
 
-- [ESLint by Microsoft](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [Error Lens by Alexander](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+-   [ESLint by Microsoft](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+-   [Error Lens by Alexander](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
 
 Add the following scripts to your package.json:
 
@@ -425,3 +421,71 @@ npm run lint:fix
 ```
 
 ## Prettier
+
+### About
+
+Prettier is an opinionated code formatter that enforces a consistent style by parsing your code and reprinting it with its own rules that take the maximum line length into account, wrapping code when necessary. It supports many languages and integrates with most editors.
+[Prettier](https://prettier.io/)
+
+Install Prettier as a dev dependency:
+
+```bash
+npm install --save-dev --save-exact prettier
+
+
+```
+
+Also, use the Prettier code formatter extension for VS Code:
+
+[Prettier - Code formatter by Prettier] (https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
+Create a `.prettierrc` file in the root directory of your project and define your preferred Prettier rules. Here’s an example configuration:
+
+```json
+{
+    "trailingComma": "none",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 150,
+    "singleAttributePerLine": true,
+    "endOfLine": "crlf"
+}
+```
+
+### ESLint (and other linters)
+
+If you use ESLint, install eslint-config-prettier to make ESLint and Prettier work well together. This turns off all ESLint rules that are unnecessary or might conflict with Prettier.
+
+```bash
+npm install --save-dev eslint-config-prettier
+```
+
+Update your `.eslintrc.json` file to include Prettier’s configuration:
+
+```js
+
+"extends": ["eslint:recommended", "plugin:react/recommended", "next/core-web-vitals", "prettier"],
+
+```
+
+Add the following scripts to your package.json to check and fix code formatting:
+
+```json
+"scripts": {
+ "format:check": "prettier  --check",
+        "format:fix": "prettier  --fix"
+}
+
+```
+
+Add the following configuration for lint-staged in your package.json:
+
+```json
+"lint-staged": {
+  "*.ts": [
+    "npm run format:fix"
+  ]
+}
+```
+
